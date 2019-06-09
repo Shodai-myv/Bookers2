@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookers2</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <nav class="navbar navbar-left">
+          <span>Bookers</span>
+        </nav>
+        <nav>
+          <ul class="navbar navbar-right">
+            <li>
+              <a class="glyphicon glyphicon-home home"><%= link_to 'home', root_path %></a>
+            </li>
+            <li>
+              <a class="glyphicon glyphicon-link about"><%= link_to 'about', home_about_path %></a>
+            </li>
+            <li>
+              <a class="glyphicon glyphicon-edit sign_up"><%= link_to 'sign up', new_user_registration_path %></a>
+            </li>
+            <li>
+              <a class="glyphicon glyphicon-log-in sign_in"><%= link_to 'login', new_user_session_path %></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <%= yield %>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-3 col-xs-offset-9">
+            <p>CopyRight Infratop.inc</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
