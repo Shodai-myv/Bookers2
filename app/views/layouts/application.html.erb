@@ -10,26 +10,43 @@
   </head>
 
   <body>
-    <header>
+    <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
         <nav class="navbar navbar-left">
           <span>Bookers</span>
         </nav>
         <nav>
-          <ul class="navbar navbar-right">
-            <li>
-              <a class="glyphicon glyphicon-home home"><%= link_to 'home', root_path %></a>
-            </li>
-            <li>
-              <a class="glyphicon glyphicon-link about"><%= link_to 'about', home_about_path %></a>
-            </li>
-            <li>
-              <a class="glyphicon glyphicon-edit sign_up"><%= link_to 'sign up', new_user_registration_path %></a>
-            </li>
-            <li>
-              <a class="glyphicon glyphicon-log-in sign_in"><%= link_to 'login', new_user_session_path %></a>
-            </li>
-          </ul>
+          <% if user_signed_in? %>
+            <ul class="navbar navbar-right">
+              <li>
+                <a class="glyphicon glyphicon-home home"><%= link_to 'home', root_path %></a>
+              </li>
+              <li>
+                <a class="glyphicon glyphicon-link about"><%= link_to 'users', users_path %></a>
+              </li>
+              <li>
+                <a class="glyphicon glyphicon-edit sign_up"><%= link_to 'books', books_path %></a>
+              </li>
+              <li>
+                <a class="glyphicon glyphicon-log-in sign_in"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></a>
+              </li>
+            </ul>
+          <% else %>
+            <ul class="navbar navbar-right">
+              <li>
+                <a class="glyphicon glyphicon-home home"><%= link_to 'home', root_path %></a>
+              </li>
+              <li>
+                <a class="glyphicon glyphicon-link about"><%= link_to 'about', home_about_path %></a>
+              </li>
+              <li>
+                <a class="glyphicon glyphicon-edit sign_up"><%= link_to 'sign up', new_user_registration_path %></a>
+              </li>
+              <li>
+                <a class="glyphicon glyphicon-log-in sign_in"><%= link_to 'login', new_user_session_path %></a>
+              </li>
+            </ul>
+          <% end %>
         </nav>
       </div>
     </header>

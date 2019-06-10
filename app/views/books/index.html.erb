@@ -17,8 +17,10 @@
 				<tbody>
 					<tr><!--ここに繰り返し　user:id　と　book:title と book:body-->
 						<% @books.each do |book| %>
-						<td></td>
-						<td><%= book.title %></td>
+						<td><%= attachment_image_tag current_user, :profile_image %></td>
+						<td>
+							<%= link_to book.title, book_path(book.id) %>
+						</td>
 						<td><%= book.body %></td>
 						<% end %>
 					</tr>

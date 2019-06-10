@@ -1,0 +1,20 @@
+<div class="body">
+	<div class="container">
+		<p id="notice"></p>
+		<div class="row">
+			<%= render 'users/list', book: @book, user: @user %>
+			<div class="col-xs-9">
+				<h2>Book detail</h2>
+				<table class="table">
+					<tbody>
+						<tr><!--ここに繰り返し　user:id　と　book:title と book:body-->
+							<td><%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg" %> <%= @user.name %></td>
+							<td><%= @book.title %></td>
+							<td><%= @book.body %></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
