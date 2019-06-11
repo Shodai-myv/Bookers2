@@ -1,18 +1,19 @@
 <div class="body">
 	<div class="container">
 		<div class="row">
-			<%= render 'users/list', book: @book, user: @user %>
+			<%= render 'users/list', book: @book, user: @book.user %>
 			<div class="col-xs-9">
 				<h2>Book detail</h2>
 				<table class="table">
 					<tbody>
 						<tr><!--ここに繰り返し　user:id　と　book:title と book:body-->
-							<td><%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg" %> <%= @user.name %></td>
-							<% @book.each do |book| %>
-							<td><%= book.title %></td>
-							<td><%= book.body %></td>
-							<%= link_to "edit", edit_book_path(@book), class: "btn-sm btn-success" %>
-							<%= link_to "destroy", book_path(@book), method: :delete, "data-confirm" => "本当に消しますか？", class: "btn-sm btn-danger" %>
+							<td><%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", size: "30x30" %><br>
+							 <%= link_to @book.user.name, user_path(@book.user) %></td>
+							<td><%= @book.title %></td>
+							<td><%= @book.body %></td>
+							<% if current_user == @book.user %>
+							<td><%= link_to "edit", edit_book_path(@book), class: "btn-sm btn-success" %></td>
+							<td><%= link_to "destroy", book_path(@book), method: :delete, "data-confirm" => "本当に消しますか？", class: "btn-sm btn-danger" %></td>
 							<% end %>
 						</tr>
 					</tbody>

@@ -1,10 +1,13 @@
 class UsersController < ApplicationController
-	before_action :set_book_new, only: [:show, :index]
 	before_action :authenticate_user!
+	before_action :check, only: [:update, :edit]
+	before_action :set_book_new, only: [:show, :index]
+
 
   def show
   	@user = User.find(params[:id])
   	@books = @user.books
+  	@book = Book.new
   	# flash[:notice] = "Welcome! You have signed up successfully."
   end
 
@@ -27,11 +30,18 @@ class UsersController < ApplicationController
 	end
   end
 
+  private
   def set_book_new
 	@book = Book.new
   end
 
-  private
+  def check
+  	user = User.find(params[:id])
+	  if current_user != user
+	  	redirect_to user_path(current_user)
+	  end
+	end
+
   def user_params
   	params.require(:user).permit(:name, :profile_image, :introduction)
   end
