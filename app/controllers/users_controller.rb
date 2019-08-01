@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   	@users = User.all
   end
 
+  
   def edit
   	@user = User.find(params[:id])
   end
@@ -31,18 +32,8 @@ class UsersController < ApplicationController
   end
 
   private
-  def set_book_new
-	@book = Book.new
-  end
-
-  def check
-  	user = User.find(params[:id])
-	  if current_user != user
-	  	redirect_to user_path(current_user)
-	  end
-	end
 
   def user_params
-  	params.require(:user).permit(:name, :profile_image, :introduction)
+  	params.require(:user).permit(:name_first, :name_last, :name_first_phonetic, :name_last_phonetic, :profile_image, :introduction, :post_code, :address, :phone, :admin, :quit_flag)
   end
 end

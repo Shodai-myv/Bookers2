@@ -6,7 +6,7 @@ resources :users
 
 get '/home/about'  => 'homes#about'
 
-root 'homes#top'
+root 'item/index'
 
 
 end
