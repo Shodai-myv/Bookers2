@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   	@book = Book.new
   	# flash[:notice] = "Welcome! You have signed up successfully."
   end
+
   def index
   	@users = User.all
   end
