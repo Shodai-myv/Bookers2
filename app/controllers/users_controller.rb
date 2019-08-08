@@ -3,7 +3,6 @@ class UsersController < ApplicationController
 	before_action :check, only: [:update, :edit]
 	before_action :set_book_new, only: [:show, :index]
 
-
   def show
   	@user = User.find(params[:id])
   	@books = @user.books
