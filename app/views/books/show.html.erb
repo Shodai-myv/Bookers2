@@ -6,7 +6,7 @@
 				<h2>Book detail</h2>
 				<table class="table">
 					<tbody>
-						<tr><!--ここに繰り返し　user:id　と　book:title と book:body-->
+						<tr><!--ここに繰り返しuser:id　と　book:title と book:body-->
 							<td><%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", size: "30x30" %><br>
 							<%= link_to @book.user.name, user_path(@book.user) %></td>
 							<td><%= @book.title %></td>
