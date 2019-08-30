@@ -13,54 +13,61 @@
  *= require_tree .
  *= require_self
  */
-    @import "bootstrap-sprockets";
-    @import "bootstrap";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
+header {
+  color: white;
+}
 
-    header {
-    	color: white;
-    }
+.nav {
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
 
-    .nav {
-    	margin-bottom: 0;
-    	padding-left: 0;
-    	list-style: none;
-    }
+.navbar-inverse {
+  background-color: #222;
+  border-color: #090909;
+}
 
-    .navbar-inverse {
-    	background-color: #222;
-    	border-color: #090909;
-    }
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: 1030;
+  border-width: 0 0 1px;
+}
 
-    .navbar-fixed-top, .navbar-fixed-bottom {
-    	position: fixed;
-    	right: 0;
-    	left: 0;
-    	top: 0;
-    	z-index: 1030;
-    	border-width: 0 0 1px;
-    }
+header .navbar-left span {
+  font-size: 20px;
+  padding-top: 10px;
+}
 
-    header .navbar-left span {
-    	font-size: 20px;
-    	padding-top: 10px;
-    }
+p,
+ol,
+ul,
+td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 33px;
+}
 
-    p, ol, ul, td {
-    	font-family: verdana, arial, helvetica, sans-serif;
-    	font-size: 13px;
-    	line-height: 18px;
-    	margin: 33px;
-    }
+.navbar-nav > li {
+  float: left;
+}
 
-    .navbar-nav>li {
-    	float: left;
-    }
-
-    .nav>li {
-    	position: relative;
-    	display: block;
-    }
-    .header-hight{
-    	height: 70px;
-    }
+.nav > li {
+  position: relative;
+  display: block;
+}
+.header-hight {
+  height: 70px;
+}
+.chara-image {
+  height: 100px;
+  width: auto;
+}
