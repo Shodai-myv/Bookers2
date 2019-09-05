@@ -11,19 +11,16 @@ RSpec.feature "Bookに関するテスト", type: :feature do
         visit books_path
         expect(page).to have_current_path new_user_session_path
       end
-
       scenario "bookの詳細ページ" do
         visit book_path(@user1.books.first)
         expect(page).to have_current_path new_user_session_path
       end
-
       scenario "bookの編集ページ" do
         visit edit_book_path(@user1.books.first)
         expect(page).to have_current_path new_user_session_path
       end
     end
   end
-
   feature "ログインした状態で" do
     before do
       login(@user1)

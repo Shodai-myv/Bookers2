@@ -11,12 +11,10 @@ RSpec.feature "Userに関するテスト", type: :feature do
         visit users_path
         expect(page).to have_current_path new_user_session_path
       end
-
       scenario "userの詳細ページ" do
         visit user_path(@user1)
         expect(page).to have_current_path new_user_session_path
       end
-
       scenario "userの編集ページ" do
         visit edit_user_path(@user1)
         expect(page).to have_current_path new_user_session_path
