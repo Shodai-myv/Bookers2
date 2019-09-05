@@ -3,8 +3,6 @@ class BooksController < ApplicationController
 	before_action :authenticate_user!
 	before_action :check, only: [:update, :edit]
 	before_action :set_book_new, only: [:show, :index]
-
-
 	def create
 		@book = Book.new(book_params)
 		@book.user_id = current_user.id
