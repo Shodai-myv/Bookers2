@@ -8,7 +8,6 @@ FactoryBot.define do
     trait :no_title do
       title {}
     end
-
     trait :no_body do
       body {}
     end
