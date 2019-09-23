@@ -11,7 +11,6 @@ FactoryBot.define do
     trait :no_body do
       body {}
     end
-
     trait :too_long_body do
       body {Faker::Lorem.characters(201)}
     end
