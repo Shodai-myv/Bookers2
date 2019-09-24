@@ -4,7 +4,6 @@ RSpec.feature "Homeページ、サインアップ、ログイン、ログアウ�
   before do
     @user = FactoryBot.create(:user, :create_with_books)
   end
-
   feature "サインアップの確認" do
     before do
       visit new_user_registration_path
